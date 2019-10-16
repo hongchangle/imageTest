@@ -1,0 +1,26 @@
+<view>
+    <form onSubmit="formSubmit" onReset="formReset">
+      <view class="btn-area">
+        <button type="primary" formType="submit">提交</button>
+      </view>
+    </form>
+
+
+<view class="question-images clearFloat">
+  <block a:for="{{images}}" a:for-item="item">
+    <view class="q-image-wrap">
+      <!-- 图片缩略图  -->
+      <image class="q-image" src="{{item}}" mode="scaleToFill"  onTap="handleImagePreview" onError="imageError" onLoad="imageLoad"></image>
+      <!-- 移除图片的按钮  -->
+      <view class="q-image-remover"  onTap="removeImage">
+        <icon type='clear'></icon>
+      </view>
+    </view>
+  </block>
+  <view class='uploadImgBtn' onTap="chooseImage" a:if="{{images.length< 9}}">
+    <text class="iconfont icon-icon_add"></text>
+  </view>
+</view>
+
+    
+</view>
